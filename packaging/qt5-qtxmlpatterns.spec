@@ -31,6 +31,7 @@ Group:      Base/Libraries
 License:    LGPL-2.1 or GPL-3.0
 URL:        http://qt.digia.com
 Source0:    %{name}-%{version}.tar.bz2
+Source1001: %{name}.manifest
 BuildRequires:  qt5-qtcore-devel
 BuildRequires:  qt5-qtxml-devel
 BuildRequires:  qt5-qtgui-devel
@@ -64,6 +65,7 @@ This package contains the XMLPatterns library development files
 
 %prep
 %setup -q -n %{name}-%{version}/qtxmlpatterns
+cp %{SOURCE1001} .
 
 # The original source assumes build happens within a monolithic tree.
 # The tool used is syncqt, which complains a lot but really only wants
@@ -110,11 +112,13 @@ rm -rf %{buildroot}%{_includedir}/qt5/Qt
 
 %files
 %defattr(-,root,root,-)
+%manifest %{name}.manifest
 %{_libdir}/libQt5XmlPatterns.so.*
 %{_qt5_bindir}/*
 
 %files devel
 %defattr(-,root,root,-)
+%manifest %{name}.manifest
 %{_libdir}/libQt5XmlPatterns.so
 %{_libdir}/libQt5XmlPatterns.prl
 %{_libdir}/pkgconfig/*
