@@ -25,7 +25,7 @@
 
 Name:       qt5-qtxmlpatterns
 Summary:    Qt XML Patterns library
-Version:    5.3.0
+Version:    5.3.1
 Release:    0
 Group:      Base/Libraries
 License:    LGPL-2.1 or GPL-3.0
