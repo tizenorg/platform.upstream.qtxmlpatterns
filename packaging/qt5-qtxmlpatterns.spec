@@ -64,8 +64,7 @@ This package contains the XMLPatterns library development files
 #### Build section
 
 %prep
-%setup -q -n %{name}-%{version}/qtxmlpatterns
-cp %{SOURCE1001} .
+%setup -q -n %{name}-%{version}
 
 # The original source assumes build happens within a monolithic tree.
 # The tool used is syncqt, which complains a lot but really only wants
@@ -75,6 +74,7 @@ cp %{SOURCE1001} .
 # XXX: FOR THE LOVE OF ALL THAT MAY BE HOLY - DO NOT USE RPMBUILD AND
 # ITS INTERNAL qmake MACRO. IT BREAKS THE BUILD!
 %build
+cp %{SOURCE1001} .
 export QTDIR=/usr/share/qt5
 touch .git
 qmake -qt=5
